@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * created by Anton Platunov 12.01.2019 **/
 
-// Без мапинга- нужно добавить
+// Поправил мапинг
 
 @Entity
 @Table(name = "cards")

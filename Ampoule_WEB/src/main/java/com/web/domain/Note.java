@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 
-// Без мапинга - нужно добавить
+// Поправил мапинг
 
 @Entity
 @Table(name = "notes")
