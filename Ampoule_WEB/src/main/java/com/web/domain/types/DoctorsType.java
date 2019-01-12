@@ -1,0 +1,5 @@
+package com.web.domain.types;
+
+public enum DoctorsType {
+    GYNECOLOGIST, TREATMENT,CARDIOLOGIST, SURGEON, DENTIST, OCCULAR, NEUROLOGIST, TRAUMATOLOGIST, PEDIATRIC,
+}
