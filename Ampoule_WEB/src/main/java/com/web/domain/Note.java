@@ -7,6 +7,7 @@ import sun.util.calendar.BaseCalendar;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -21,7 +22,7 @@ public class Note {
     private Long id;
 
     @Column
-    private BaseCalendar.Date date; // Не знаю как записывать правильно дату в БД
+    private Date date; // Не знаю как записывать правильно дату в БД
     @Column
     private Doctor doctor;
     @Column
@@ -43,11 +44,11 @@ public class Note {
         this.id = id;
     }
 
-    public BaseCalendar.Date getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(BaseCalendar.Date date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

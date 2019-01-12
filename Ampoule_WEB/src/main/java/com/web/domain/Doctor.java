@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * created by Anton Platunov 12.01.2019 **/
+ * created by Anton Platunov 12.01.2019
+ **/
 
 // Без мапинга - нужно добавить
 @Entity
@@ -23,22 +24,20 @@ public class Doctor {
     @Column
     private String password;
     @Column
-    private   String name;
+    private String name;
     @Column
-    private   String surname;
+    private String surname;
     @Enumerated(EnumType.STRING)
     private DoctorsType doctorsType;
     @Column
-    private String phonenumber;   // может лучше сменить стринг на другой тип
+    private String phoneNumber;   // может лучше сменить стринг на другой тип // на стековерфло говорят что нужен стринг
 
 
     @ManyToMany(fetch = FetchType.EAGER, targetEntity = Card.class)
     @JoinTable(name = "Doctor_Card",
             joinColumns = @JoinColumn(name = "doctors_ref_id", referencedColumnName = "doctor_id"),
             inverseJoinColumns = @JoinColumn(name = "card_ref_id", referencedColumnName = "card_id"))
-    private List<Card> cards= new ArrayList<Card>(); // список мед.карточек, сменить на <Cards>
-
-
+    private List<Card> cards = new ArrayList<Card>(); // список мед.карточек, сменить на <Cards>
 
 
     public Doctor() {
@@ -92,12 +91,12 @@ public class Doctor {
         this.doctorsType = doctorsType;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public List<Card> getCards() {
@@ -117,7 +116,7 @@ public class Doctor {
         sb.append(", name='").append(name).append('\'');
         sb.append(", surname='").append(surname).append('\'');
         sb.append(", doctorsType=").append(doctorsType);
-        sb.append(", phonenumber='").append(phonenumber).append('\'');
+        sb.append(", phoneNumber='").append(phoneNumber).append('\'');
         sb.append(", cards=").append(cards);
         sb.append('}');
         return sb.toString();
