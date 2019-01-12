@@ -16,5 +16,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/js/**")
                 .addResourceLocations("classpath:/static/js/");
     }
+    //
 
 }
