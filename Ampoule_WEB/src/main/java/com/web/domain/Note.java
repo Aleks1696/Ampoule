@@ -28,7 +28,7 @@ public class Note {
     @Column
     private String comment;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "notes", targetEntity = Card.class)
+    @ManyToOne(fetch = FetchType.EAGER,  targetEntity = Card.class)
     private List<Card> cards= new ArrayList<Card>(); //
 
 
