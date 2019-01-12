@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * created by Anton Platunov 12.01.2019 **/
 
-// Без мапинга- нужно добавить
+// Поправил мапинг
 
 @Entity
 @Table(name = "cards")
@@ -31,7 +31,7 @@ public class Card {
     @Column
     private Integer weight;
 
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Note.class)
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "cards",targetEntity = Note.class)
     private List<Note> notes;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "cards", targetEntity = Doctor.class)
