@@ -12,7 +12,7 @@ public interface NoteService {
     Long create (Note note);
     Note getNote (Long id);
     void updateNote (Note note);
-    void deleteNote (Note note);
+    void deleteNote (Long id);
     List<Note> findAllNotes();
     List<Note> findByDoctor(Doctor doctor);
     List<Note> findbyDate(Date date);

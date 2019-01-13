@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class CardServiceImpl implements CardService {
     private CardRepository cardRepository;
@@ -17,15 +18,13 @@ public class CardServiceImpl implements CardService {
 
     public Long createCard(Card card) {
 
-     return cardRepository.saveAndFlush(card).getId();
+        return cardRepository.saveAndFlush(card).getId();
     }
 
     public boolean cardSingIn(String login, String password) {
 
-        if (login.equals(password)){
-            return true;
-        }
-            return false;
+
+        return false;
     }
 
     public Card getCard(Long id) {
@@ -38,7 +37,7 @@ public class CardServiceImpl implements CardService {
     }
 
     public void deleteNote(Long id) {
-cardRepository.delete(id);
+        cardRepository.delete(id);
     }
 
     public List<Card> findAllCard() {
