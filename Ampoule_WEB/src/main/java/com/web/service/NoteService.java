@@ -11,8 +11,8 @@ import java.util.List;
 public interface NoteService {
     Long create (Note note);
     Note getNote (Long id);
-    void update (Note note);
-    void delete (Note note);
+    void updateNote (Note note);
+    void deleteNote (Note note);
     List<Note> findAllNotes();
     List<Note> findByDoctor(Doctor doctor);
     List<Note> findbyDate(Date date);

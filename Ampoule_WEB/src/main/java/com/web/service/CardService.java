@@ -1,13 +1,12 @@
 package com.web.service;
 
 import com.web.domain.Card;
-import com.web.domain.Note;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public interface CardService {
-    Long createCard();
+    Long createCard(Card card);
 
     boolean cardSingIn(String login, String password);
 
@@ -15,7 +14,7 @@ public interface CardService {
 
     void update(Card card);
 
-    void deleteNote (Card card);
+    void deleteNote (Long id);
 
     List<Card> findAllCard();
 
