@@ -8,10 +8,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class RouteController {
 
 
+//
+//    @RequestMapping(value = "/doctor.html", method = RequestMethod.GET)
+//    public String doctorPage(){
+//        return "doctor";
+//    }
 
-    @RequestMapping(value = "/doctor.html", method = RequestMethod.GET)
-    public String doctorPage(){
-        return "doctor";
+    @RequestMapping(value = "/login.html", method = RequestMethod.GET)
+    public String loginPage(){
+        return "login";
     }
 
 }
