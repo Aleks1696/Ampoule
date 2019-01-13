@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * created by Anton Platunov 13.01.2019
  */
-
+// Я не знаю,как с фронта передать Енам
 @Controller
 public class CardController {
 
