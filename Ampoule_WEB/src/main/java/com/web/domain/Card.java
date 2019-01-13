@@ -2,6 +2,7 @@ package com.web.domain;
 
 import com.web.domain.types.HumanGender;
 import org.aspectj.weaver.ast.Not;
+import org.springframework.stereotype.Controller;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,17 +19,21 @@ public class Card {
     @Column(name = "card_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column
+    @Column(name = "email",unique = true)
     private String email;
-    @Column
+    @Column(name = "password")
     private String password;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "surname")
+    private String surname;
     @Enumerated(EnumType.STRING)
     private HumanGender gender;
-    @Column
+    @Column(name="birthday")
     private Integer birthday;
-    @Column
+    @Column(name="height")
     private Integer height;
-    @Column
+    @Column(name="weight")
     private Integer weight;
 
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "cards",targetEntity = Note.class)
@@ -38,6 +43,17 @@ public class Card {
     private List<Doctor> doctors;
 
     public Card() {
+    }
+
+    public Card(String email, String password, String name, String surname, HumanGender gender, Integer birthday, Integer height, Integer weight) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.height = height;
+        this.weight = weight;
     }
 
     public Long getId() {
@@ -62,6 +78,22 @@ public class Card {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public HumanGender getGender() {
@@ -118,6 +150,8 @@ public class Card {
         sb.append("id=").append(id);
         sb.append(", email='").append(email).append('\'');
         sb.append(", password='").append(password).append('\'');
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", surname='").append(surname).append('\'');
         sb.append(", gender=").append(gender);
         sb.append(", birthday=").append(birthday);
         sb.append(", height=").append(height);
@@ -126,6 +160,5 @@ public class Card {
         sb.append(", doctors=").append(doctors);
         sb.append('}');
         return sb.toString();
-
     }
 }
