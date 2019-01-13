@@ -39,8 +39,8 @@ public class Card {
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "cards",targetEntity = Note.class)
     private List<Note> notes;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "cards", targetEntity = Doctor.class)
-    private List<Doctor> doctors;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "cards", targetEntity = Doctor.class) //изменил на FetchType.Lazy. Нельзя в одном
+    private List<Doctor> doctors;                                                        //классе два игоря. Ошибка: MultipleBagFetchException
 
     public Card() {
     }
