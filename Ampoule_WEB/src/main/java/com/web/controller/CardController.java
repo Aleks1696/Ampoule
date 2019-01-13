@@ -42,7 +42,7 @@ public class CardController {
     }
 
     @RequestMapping(value = "/card/authorization", method = RequestMethod.GET)
-    public @ResponseBody Integer checkMember(
+    public @ResponseBody Integer checkCard(
             @RequestParam("email") String email,
             @RequestParam("password") String password){
         Card card = cardRepository.findByLoginAndPasswordEquals(email,password);
