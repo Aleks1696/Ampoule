@@ -3,6 +3,7 @@ package com.web.domain;
 import com.web.domain.types.DoctorsType;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
 // Без мапинга - нужно добавить
 @Entity
 @Table(name = "doctors")
-public class Doctor {
+public class Doctor implements Serializable {
     @Id
     @Column(name = "doctor_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
