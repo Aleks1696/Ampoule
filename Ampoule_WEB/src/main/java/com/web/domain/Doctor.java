@@ -19,17 +19,17 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @Column(name = "email",unique = true)
     private String email;
-    @Column
+    @Column(name = "password")
     private String password;
-    @Column
+    @Column(name = "name")
     private String name;
-    @Column
+    @Column(name = "surname")
     private String surname;
     @Enumerated(EnumType.STRING)
     private DoctorsType doctorsType;
-    @Column
+    @Column(name = "phoneNumber")
     private String phoneNumber;   // может лучше сменить стринг на другой тип // на стековерфло говорят что нужен стринг
 
 
@@ -39,6 +39,14 @@ public class Doctor {
             inverseJoinColumns = @JoinColumn(name = "card_ref_id", referencedColumnName = "card_id"))
     private List<Card> cards = new ArrayList<Card>(); // список мед.карточек, сменить на <Cards>
 
+    public Doctor(String email, String password, String name, String surname, DoctorsType doctorsType, String phoneNumber) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.doctorsType = doctorsType;
+        this.phoneNumber = phoneNumber;
+    }
 
     public Doctor() {
     }
