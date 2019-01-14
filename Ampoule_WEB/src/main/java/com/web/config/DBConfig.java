@@ -38,6 +38,7 @@ public class DBConfig {
     @Value("${entitymanager.packagesToScan}")
     private String ENTITYMANAGER_PACKAGES_TO_SCAN;
 
+
     @Bean
     @Primary
     public DataSource dataSource() {
