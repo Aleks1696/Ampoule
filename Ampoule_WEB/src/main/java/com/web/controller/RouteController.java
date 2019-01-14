@@ -16,7 +16,7 @@ public class RouteController {
 
     @RequestMapping(value = "/login.html", method = RequestMethod.GET)
     public String loginPage(){
-        return "login";
+        return "accountCard";
     }
 
 }
