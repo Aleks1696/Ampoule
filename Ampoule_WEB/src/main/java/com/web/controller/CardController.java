@@ -45,7 +45,7 @@ public class CardController {
     public @ResponseBody Integer checkCard(
             @RequestParam("email") String email,
             @RequestParam("password") String password){
-        Card card = cardRepository.findByLoginAndPasswordEquals(email,password);
+        Card card = cardRepository.findByEmailAndPasswordEquals(email,password);
         if (card != null){
             return 1;
         } return 0;
