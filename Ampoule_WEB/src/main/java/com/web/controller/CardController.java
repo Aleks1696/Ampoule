@@ -33,22 +33,24 @@ public class CardController {
             @RequestParam("password") String password,
             @RequestParam("name") String name,
             @RequestParam("surname") String surname,
-            @RequestParam("gender")HumanGender gender,
-            @RequestParam("birthday")Integer birthday,
-            @RequestParam("height")Integer height,
-            @RequestParam("height")Integer weight) {
-            cardRepository.saveAndFlush(new Card(email,password,name,surname,gender,birthday,height,weight));
+            @RequestParam("gender") HumanGender gender,
+            @RequestParam("birthday") Integer birthday,
+            @RequestParam("height") Integer height,
+            @RequestParam("height") Integer weight) {
+        cardRepository.saveAndFlush(new Card(email, password, name, surname, gender, birthday, height, weight));
 
     }
 
     @RequestMapping(value = "/card/authorization", method = RequestMethod.GET)
-    public @ResponseBody Integer checkCard(
+    public @ResponseBody
+    Boolean checkCard(
             @RequestParam("email") String email,
-            @RequestParam("password") String password){
-        Card card = cardRepository.findByEmailAndPasswordEquals(email,password);
-        if (card != null){
-            return 1;
-        } return 0;
+            @RequestParam("password") String password) {
+        Card card = cardRepository.findByEmailAndPasswordEquals(email, password);
+        if (card != null) {
+            return true;
+        }
+        return false;
 
     }
 
@@ -62,14 +64,13 @@ public class CardController {
             JSONObject item = new JSONObject();
             item.put("id", card.getId());
             item.put("email", card.getEmail());
-            item.put("name",card.getName());
-            item.put("surname",card.getSurname());
-            item.put("birthday",card.getBirthday());
+            item.put("name", card.getName());
+            item.put("surname", card.getSurname());
+            item.put("birthday", card.getBirthday());
             body.add(item);
         }
         return body.toJSONString();
     }
-
 
 
 }
