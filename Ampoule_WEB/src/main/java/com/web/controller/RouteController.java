@@ -7,21 +7,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class RouteController {
 
-
-//
-//    @RequestMapping(value = "/doctor.html", method = RequestMethod.GET)
-//    public String doctorPage(){
-//        return "doctor";
-//    }
-
-    @RequestMapping(value = "/login.html", method = RequestMethod.GET)
-    public String loginPage(){
+    @RequestMapping(value = "/ampoule.html", method = RequestMethod.GET)
+    public String loginPage() {
         return "accountCard";
     }
 
-    @RequestMapping(value = "/personalpage.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/personalPage.html", method = RequestMethod.GET)
     public String cardPage() {
         return "personalPage";
     }
 
+    @RequestMapping(value = "/registrationCard.html", method = RequestMethod.GET)
+    public String cardRegistration() {
+        return "registrationCard";
+    }
+
+//    @RequestMapping(value = "/doctor.html", method = RequestMethod.GET)
+//    public String doctorPage(){
+//        return "doctor";
+//    }
 }
