@@ -19,4 +19,9 @@ public class RouteController {
         return "accountCard";
     }
 
+    @RequestMapping(value = "/personalpage.html", method = RequestMethod.GET)
+    public String cardPage() {
+        return "personalPage";
+    }
+
 }
