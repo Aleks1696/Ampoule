@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>Ampoule</title>
+    <meta name="description" content="Doctor page"/>
+
+    <script type="text/javascript" src="/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/js/doctor.js"></script>
+
+</head>
+
+<body>
+
+    <fieldset id="doctor_info_for_page">
+        <legend>Info</legend>
+        Name: <p id="doctor_name_for_page"></p>
+        Surname: <p id="doctor_surname_for_page"></p>
+        Phone number: <p id="doctor_phoneNumber_for_page"></p>
+    </fieldset>
+
+
+    <form id="doctorWorkingForm">
+        <fieldset id="doctor_control_buttons_for_page">
+            <legend>Control buttons</legend>
+            <input id="find_card_button" type="button" value="Find card" onclick="getCa =rdById()"/>
+            <input id="get_all_cards" type="button" value="Get all cards" onclick="getAllCards()"/>
+        </fieldset>
+
+        <fieldset id="doctor_output_window">
+            <legend>Output window</legend>
+            <div id="output_info_window">
+
+            </div>
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>
