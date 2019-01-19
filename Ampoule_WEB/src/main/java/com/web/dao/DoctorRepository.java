@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface DoctorRepository  extends JpaRepository<Doctor, Long> {
     Doctor findByIdEquals(Long id);
 
+    Doctor findByEmailAndPasswordEquals (String email, String password);
+
 }
