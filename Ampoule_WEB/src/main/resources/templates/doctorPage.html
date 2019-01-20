@@ -13,11 +13,24 @@
 
     <fieldset id="doctor_info_for_page">
         <legend>Info</legend>
-        Name: <p id="doctor_name_for_page"></p>
-        Surname: <p id="doctor_surname_for_page"></p>
-        Phone number: <p id="doctor_phoneNumber_for_page"></p>
     </fieldset>
+    <!--скрипт для автоматической подгрузки полей как только начнется загрузка html страницы-->
+    <script>
+        window.onload = function () {
+            $.ajax('/doctor/get/active', {
+                    type: 'GET',
 
+                    success: function (response) {
+                        console.log(response);
+                        $('#doctor_info_for_page')
+                            .append('Id: ' + response.id + '<br/>')
+                            .append('Name: ' + response.name + '<br/>')
+                            .append('Surname: ' + response.surname + '<br/>')
+                    }
+                }
+            )
+        }
+    </script>
 
     <form id="doctorWorkingForm">
         <fieldset id="doctor_control_buttons_for_page">
