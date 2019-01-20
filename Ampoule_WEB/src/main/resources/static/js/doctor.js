@@ -50,6 +50,7 @@ function doctor_registration() {
         }
     })
 }
+
 function getCardById() {
     $('#output_info_window')
         .empty()
@@ -82,5 +83,31 @@ function find_card() {
 }
 
 function getAllCards() {
+    $.ajax({
+        type: 'GET',
+        url: '/doctor/get/all/cards',
 
+        success: function (response) {
+            console.log(response);
+            console.log(response.length);
+            console.log(response[0].id);
+            $('#output_info_window')
+                .empty()
+                .append('<h3>Cards info</h3>');
+
+            for (var i = 0; i < response.length; i++) {
+                $('#output_info_window')
+                    .append('<div id="card' + i + '">');
+                $('#card' + i)
+                    .append('Card id: ' + response[i].id + '<br/>')
+                    .append('Patient name: ' + response[i].name + '<br/>')
+                    .append('Patient surname: ' + response[i].surname + '<br/>')
+                    .append('Patient gender: ' + response[i].gender + '<br/>')
+                    .append('Patient birthday: ' + response[i].birthday + '<br/>')
+                    .append('Patient height: ' + response[i].height + '<br/>')
+                    .append('Patient weight: ' + response[i].weight + '<br/>')
+                    .append('<br/>');
+            }
+        }
+    })
 }
