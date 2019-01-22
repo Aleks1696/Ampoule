@@ -39,16 +39,17 @@ public class DoctorController {
         Doctor doctor = doctorRepository.findByEmailAndPasswordEquals(
                 request.getParameter("email"), request.getParameter("password")
         );
-
-        //добавляем в сессию данные доктора
-        HttpSession session = request.getSession();
-        session.setAttribute("id", doctor.getId());
-        session.setAttribute("email", doctor.getEmail());
-        session.setAttribute("name", doctor.getName());
-        session.setAttribute("surname", doctor.getSurname());
-        session.setAttribute("doctorType", doctor.getDoctorsType());
-        session.setAttribute("phoneNumber", doctor.getPhoneNumber());
-        session.setAttribute("cards", doctor.getCards());
+        if (doctor != null) {
+            //добавляем в сессию данные доктора
+            HttpSession session = request.getSession();
+            session.setAttribute("id", doctor.getId());
+            session.setAttribute("email", doctor.getEmail());
+            session.setAttribute("name", doctor.getName());
+            session.setAttribute("surname", doctor.getSurname());
+            session.setAttribute("doctorType", doctor.getDoctorsType());
+            session.setAttribute("phoneNumber", doctor.getPhoneNumber());
+            session.setAttribute("cards", doctor.getCards());
+        }
 
         return (doctor != null) ? true : false;
     }
