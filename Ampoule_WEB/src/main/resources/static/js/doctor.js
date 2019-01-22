@@ -7,11 +7,13 @@ function doctor_authorization() {
             password: jQuery('#doctor_password').val()
         },
         success: function (response) {
-            jQuery('#email').val(''),
+                jQuery('#email').val(''),
                 jQuery('#password').val('')
             if (response) {
                 location.href = "/doctorPage.html"
             } else {
+                    jQuery('#email').val(''),
+                    jQuery('#password').val('')
                 jQuery('#doctor_service_message')
                     .empty()
                     .append('Доктор с заданным логином и паролем не зарегистрирован')
