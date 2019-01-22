@@ -1,0 +1,44 @@
+
+fieldset {
+    margin: 80px 500px 10px 500px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border-color: limegreen;
+    text-align: center;
+    width: 800px;
+}
+
+#doctor_control_buttons_for_page {
+    margin: 10px 500px;
+}
+
+#doctor_output_window {
+    margin: 10px 500px;
+}
+
+legend {
+    font-size: 32px;
+    color: seagreen;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+}
+
+.control_buttons {
+    float: left;
+    margin: 2px 10px;
+    color: white;
+    background-color: seagreen;
+    font-size: 18px;
+    font-style: normal;
+    padding: 8px 15px;
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.control_buttons:hover {
+    background-color: limegreen;
+}
+
+
+
+

@@ -1,0 +1,49 @@
+html {
+    font-family: "Droid Serif";
+}
+
+fieldset.doctorAuthorization_fieldset {
+    width: 600px;
+    margin: 80px 500px 30px 500px;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    border-radius: 20px;
+    border-color: limegreen;
+    border-width: medium;
+}
+
+legend {
+    font-size: 36px;
+    color: seagreen;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+}
+
+input {
+    color: #000;
+    font-size: 18px;
+    font-style: oblique;;
+    padding: 6px 10px;
+    margin: 16px 5px 10px 5px;
+    border-radius: 14px;
+    border-width: 2px;
+    border-color: #000;
+}
+
+#doctor_singIn, #doctor_signUp {
+    font-size: 16px;
+    font-style: normal;
+    padding: 5px 30px;
+}
+
+p {
+    font-size: 20px;
+    display: inline;
+}
+
+#doctor_service_message {
+    font-size: 16px;
+    color: red;
+    margin: 15px;
+    text-align: center;
+}

@@ -1,0 +1,52 @@
+
+fieldset {
+    margin: 80px 500px 30px 500px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border-color: limegreen;
+    text-align: center;
+    width: 400px;
+}
+
+legend {
+    font-size: 36px;
+    color: seagreen;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+}
+
+input {
+    font-size: 16px;
+    margin: 10px 20px 10px 5px;
+    padding: 3px 10px;
+    border-radius: 15px;
+    border-width: 2px;
+    border-bottom-style: solid;
+    border-bottom: black;
+}
+
+select {
+    margin: 10px 20px 10px 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 3px 5px;
+}
+
+.inputData {
+    display: inline;
+}
+
+#doctor_register {
+    color: white;
+    background-color: seagreen;
+    font-size: 18px;
+    font-style: normal;
+    padding: 8px 30px;
+    width: -moz-available;
+}
+
+#doctor_register:hover{
+    background-color: limegreen;
+
+}
+
