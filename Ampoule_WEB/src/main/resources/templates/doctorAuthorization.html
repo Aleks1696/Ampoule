@@ -4,6 +4,7 @@
         <title>Ampoule</title>
         <meta name="description" content="Doctor authorization"/>
 
+        <link rel="stylesheet" href="/styles/doctor_css/doctorAuthorization.css"/>
         <script type="text/javascript" src="/lib/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="/js/doctor.js"></script>
 
@@ -13,13 +14,13 @@
 
 
 
-        <form id="doctorAuthorization">
-            <fieldset>
+        <form>
+            <fieldset class="doctorAuthorization_fieldset">
                 <legend>Authorization</legend>
 
-                Email: <input type="email" id="doctor_email" class="inputData"/>
+                <p>Email:</p> <input type="email" id="doctor_email" class="inputData"/>
                 <br/>
-                Password: <input type="password" id="doctor_password" class="inputData"/>
+                <p>Password:</p> <input type="password" id="doctor_password" class="inputData"/>
                 <br/>
                 <input id="doctor_singIn" type="button" value="Sign in" onclick="doctor_authorization()"/>
                 <br/>

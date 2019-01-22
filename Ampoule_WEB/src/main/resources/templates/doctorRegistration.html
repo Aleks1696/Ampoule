@@ -4,6 +4,7 @@
     <title>Ampoule</title>
     <meta name="description" content="Doctor registration"/>
 
+    <link rel="stylesheet" type="text/css" href="/styles/doctor_css/doctorRegistration.css"/>
     <script type="text/javascript" src="/lib/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/js/doctor.js"></script>
 
@@ -16,15 +17,24 @@
     <fieldset>
         <legend>Registration</legend>
 
-        Email: <input id="doctor_email_for_registration" type="email" required="required"/>
+        <p class="inputData login_password">Email:</p>
+        <input id="doctor_email_for_registration" type="email" required="required"/>
         <br/>
-        Password: <input id="doctor_password_for_registration" type="password" required="required"/>
+
+        <p class="inputData login_password">Password:</p>
+        <input id="doctor_password_for_registration" type="password" required="required"/>
         <br/>
-        Name: <input id="doctor_name_for_registration" type="text" required="required"/>
+
+        <p class="inputData">Name:</p>
+        <input id="doctor_name_for_registration" type="text" required="required"/>
         <br/>
-        Surname: <input id="doctor_surname_for_registration" type="text" required="required"/>
+
+        <p class="inputData">Surname:</p>
+        <input id="doctor_surname_for_registration" type="text" required="required"/>
         <br/>
-        Specialization: <select id="doctor_specialization_for_registration" required="required">
+
+        <p class="inputData">Specialization:</p>
+        <select id="doctor_specialization_for_registration" required="required">
             <option>GYNECOLOGIST</option>
             <option>TREATMENT</option>
             <option>CARDIOLOGIST</option>
@@ -35,10 +45,12 @@
             <option>PEDIATRIC</option>
         </select>
         <br/>
-        Phone number: <input id="doctor_phoneNumber_for_registration" type="text" required="required"/>
+
+        <p class="inputData">Phone number:</p>
+        <input id="doctor_phoneNumber_for_registration" type="text" required="required"/>
         <br/>
 
-        <input id="doctor_register" value="Registration" type="button" onclick="doctor_registration()"/>
+        <input class="button" id="doctor_register" value="Registration" type="button" onclick="doctor_registration()"/>
 
 
     </fieldset>
