@@ -4,7 +4,7 @@
         <title>Ampoule</title>
         <meta name="description" content="Doctor authorization"/>
 
-        <link rel="stylesheet" href="/styles/doctor_css/doctorAuthorization.css"/>
+        <link href="../static/styles/style.css" rel="stylesheet"/>
         <script type="text/javascript" src="/lib/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="/js/doctor.js"></script>
 
@@ -15,16 +15,17 @@
 
 
         <form>
-            <fieldset class="doctorAuthorization_fieldset">
-                <legend>Authorization</legend>
+            <legend>Authorization</legend>
+            <fieldset class="field">
 
-                <p>Email:</p> <input type="email" id="doctor_email" class="inputData"/>
+
+                <p>Email:</p> <input type="email" class="form-field"  id="doctor_email" class="inputData"/>
                 <br/>
-                <p>Password:</p> <input type="password" id="doctor_password" class="inputData"/>
+                <p>Password:</p> <input type="password" class="form-field" id="doctor_password" class="inputData"/>
                 <br/>
-                <input id="doctor_singIn" type="button" value="Sign in" onclick="doctor_authorization()"/>
+                <input id="doctor_singIn" type="button" class="but" value="Sign in" onclick="doctor_authorization()"/>
                 <br/>
-                <input id="doctor_signUp" type="button" value="Registration"
+                <input id="doctor_signUp" type="button" class="but" value="Registration"
                        onclick="location.href = '/doctorRegistration.html'"/>
 
                 <div id="doctor_service_message">
